@@ -269,11 +269,8 @@ public class Main {
         new CombinationOfCoins(),
         new FirstBadVersion(),
         new FB4(),
-        new FB5(),
+        new BSTIterator(),
         new FB6(),
-        new FB7(),
-        new FB8(),
-        new FB9(),
         new FBCoveringSegment(),
         new GQuestion2(),
         new Combination(),
@@ -284,7 +281,9 @@ public class Main {
         new RemoveWordFromTree(),
 
 
-
+        new RemoveDuplicateLetters(),
+        new FB8(),
+        new FB9(),
 
         new _NewClassTemplate()
     );

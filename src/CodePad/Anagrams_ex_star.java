@@ -14,7 +14,7 @@ import Common.InvokableBase;
 import Common.Priority;
 
 /**
- * Given an array of strings, return all groups of strings that are anagrams. Note: All inputs will
+ * Given an array of strings, return all groups of strings that are anagrams to each other in each subgroup. Note: All inputs will
  * be in lower-case.
  *
  * I think we should sort each words, then register each to the sorted words which will be claimed
@@ -24,7 +24,7 @@ public class Anagrams_ex_star extends InvokableBase {
 
   @Override
   public Priority getRunPriority() {
-    return new Priority(/*yymdd*/151015, 0, Category.LeetCode);
+    return new Priority(/*yymdd*/160118, 0, Category.LeetCode);
   }
 
   @Override
@@ -32,12 +32,31 @@ public class Anagrams_ex_star extends InvokableBase {
     anagrams(new String[]{"BAT", "TAB", "AT", "ABT", "TA"});
     anagrams(new String[]{"BAT", "TAB", "AT", "you", "ABT", "TA"});
     anagrams(new String[]{"BAT", "TAB", "A", "A", "TA"});
+    //this.equals();
+    // We need to convert each string to its root and check if its root has happened in a map. if so, add it there
+  }
 
-//    .stream()
-//        .forEach(p -> System.out.println(p));
-//
+  public List<List<String>> anagrams1(String[] strs) {
+    HashMap<String, List<String>> map = new HashMap<>();
 
-    // We need to convert each string to its root and check if its root has happend in a map. if so, add it there
+    for(String s : strs)
+    {
+      String sorted = getOder(s);
+      if (!map.containsKey(sorted))
+      {
+        map.put(sorted, new ArrayList<>());
+      }
+      List<String> list = map.get(sorted);
+      list.add(s);
+    }
+    return map.values().stream().collect(Collectors.toList());
+  }
+
+  private String getOder(String s)
+  {
+    char[] chars = s.toCharArray();
+    Arrays.sort(chars);
+    return chars.toString();
   }
 
   private String sort(String s) {
@@ -52,7 +71,7 @@ public class Anagrams_ex_star extends InvokableBase {
     for (String s : strs) {
       String root = sort(s);
       if (!mapRootToList.containsKey(root)) {
-        mapRootToList.put(root, new ArrayList<String>());
+        mapRootToList.put(root, new ArrayList<>());
       }
       mapRootToList.get(root).add(s);
     }

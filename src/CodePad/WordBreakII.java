@@ -33,11 +33,15 @@ public class WordBreakII extends InvokableBase {
   @Override
   public void run() {
     Set<String> dict = new HashSet<>();
+
+    Arrays.asList("a", "b").stream().forEach(p->dict.add(p));
     Arrays.asList(new String[]{
-    //    "cat", "cats", "and", "sand", "dog"
+        //    "cat", "cats", "and", "sand", "dog"
         "ca", "ab", "b", "a", "ba", "ab", "c"
 
     }).forEach(p -> dict.add(p));
+
+    Arrays.asList("a", "b").get(0);
 
     String src =
         // "catsanddog";
