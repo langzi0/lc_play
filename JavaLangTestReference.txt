@@ -1,0 +1,115 @@
+Code review points:
+1.  split to smaller function, it is easier to test.
+2.  Do not lose the performance.
+
+
+
+1. class/Main
+
+Java Language
+
+public static void main(String args[]) { … }
+interface Fido {
+void abc();
+}
+class Foo extends Bar implements Fido { … }
+
+public static void main(String[] args ){ ..}
+inteface IA {
+void abc();
+void edf();
+}
+class Foo extends Bar implements IA, IB {..}
+
+class Foo{ private Foo(){}
+}:  This will allow no instances even for inheriting.  So it has to provide public satic factory method to use it.
+
+try{}catch(){}finally{x;} :  x might not be executed when VM exits, or the thread was killed.
+
+Java reflection:
+You can get class information programmatically.
+import java.lang.reflect.*;
+Class c = Class.forName("java.sql.Connection");
+Method[]  m = c.getDeclaredMethods();
+Java array:
+String[] a=  {"s", "S"};  // initializer, compiler allows this.
+// a= {"s", "S"};  //not allowed
+a = new String[]{"s", "S"};  //We are good here.
+import java.util.List;
+List<Foo> list = new ArrayList<>();
+List.add(new Foo());
+For(Foo a: list){}
+Java Queue and LinkedList, priority Queue(diff at remove, pass in a node comparator )
+LinkedList used for queue implementation as it can be o(1) remove from both side.
+Queue <Node> q = new LinkedList<Node>();
+q.isEmpty();
+q.add(new Node());
+Node x = q.remove();
+
+Map<String, List<String>> mapRootToList = new HashMap<>();
+mapRootToList.entrySet().stream().forEach();
+    for (String s : strs) {
+      String root = sort(s);
+      if (!mapRootToList.containsKey(root)) {
+        mapRootToList.put(root, new ArrayList<String>());
+      }
+      mapRootToList.get(root).add(s);
+    }
+    HashSet<Integer> h = new HashSet<Integer>();
+h.contains(10)
+h.removes(10)
+    for (int n : num) {
+      h.add(n);
+    }
+
+
+Question:  Return multiple values in Java
+Note:
+Question:  Pre-order
+Note:
+Void visit(TreeNode root)
+{
+if (root == null) return;
+visit(root);
+visit(root.left);
+visit(root.right);
+}
+
+
+
+Question:   Online coding remember this thing.
+Note:
+Import java.util.Scanner
+        Scanner in = new Scanner(System.in);
+       System.out.print(“Give me a int”);
+        int num = in.nextInt();   in.nextLine();
+        String numListText = in.nextLine();
+        System.out.print(numListText);
+Question:
+Note:
+Question:
+Note:
+Question:
+Note:
+Question:
+Note:
+Question:
+Note:
+Question:
+Note:
+Question:
+Note:
+Question:
+Note:
+Question:
+Note:
+Question:
+Note:
+Question:
+Note:
+
+Variables are not polymorphic in Java.
+They do not override one another.  When you make variable of the same in subclass, it will hide.
+http://javarevisited.blogspot.com/2014/02/10-example-of-lambda-expressions-in-java8.html
+method  HAS TO to be override with @Override annotation
+without override, it will be called depending on if you directly using the (Base) object . Method() or object.method();
