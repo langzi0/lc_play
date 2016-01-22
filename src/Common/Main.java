@@ -2,22 +2,50 @@ package Common;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import CodePad.*;
 import Lang.JavaCollectionEx;
 import Lang.JavaLang;
 import Lang.PeekingIteratorModule;
+import Question.BSTIterator;
 import Question.CQuestion1;
 import Question.Combination;
-import Question.*;
+import Question.CombinationOfCoins;
+import Question.FB4;
+import Question.FB6;
 import Question.FBCoverStringMinSet;
+import Question.FBCoveringSegment;
 import Question.FBQuestions;
+import Question.FindPairWithGivingDiff;
+import Question.FirstBadVersion;
 import Question.GQuestion2;
 import Question.PrintNumbers;
 import Question.RandomWord;
 import Question.RemoveWordFromTree;
 import Question.Solution;
+import Unsorted.Q0;
+import Unsorted.Q1;
+import Unsorted.Q10;
+import Unsorted.Q11;
+import Unsorted.Q12;
+import Unsorted.Q13;
+import Unsorted.Q14;
+import Unsorted.Q15;
+import Unsorted.Q16;
+import Unsorted.Q17;
+import Unsorted.Q18;
+import Unsorted.Q19;
+import Unsorted.Q2;
+import Unsorted.Q20;
+import Unsorted.Q21;
+import Unsorted.Q22;
+import Unsorted.Q3;
+import Unsorted.Q4;
+import Unsorted.Q5;
+import Unsorted.Q6;
+import Unsorted.Q7;
+import Unsorted.Q8;
+import Unsorted.Q9;
 import languageTip.ReadWriteSample;
 import languageTip.ReflectionSample;
 
@@ -26,10 +54,10 @@ import languageTip.ReflectionSample;
  */
 public class Main {
 
-  static List<InvokableBase> listPrograms = new ArrayList<>();
+  static ArrayList<InvokableBase> listPrograms = new ArrayList<>();
 
   static void addingAllNewClasses() {
-    listPrograms = Arrays.asList(
+    listPrograms.addAll(Arrays.asList(
         // Add new classes here
         new ReflectionSample(),
         new JavaLang(),
@@ -257,13 +285,12 @@ public class Main {
         new ZigZagConversion_bian_ex(),
         new ReadWriteSample(),
         new PrintNumbers(),
-        new JavaCollectionEx(),
+        new JavaCollectionEx()));
 
+    listPrograms.addAll(Arrays.asList(
         // Adding anything new here like
         new _NewClassTemplate(),
         new ContainsNearbyAlmostDuplicate(),
-        new _NewClassTemplate3(),
-        new _NewClassTemplate4(),
         new FBCoverStringMinSet(),
         new FindPairWithGivingDiff(),
         new CombinationOfCoins(),
@@ -280,13 +307,42 @@ public class Main {
         new CQuestion1(),
         new RemoveWordFromTree(),
 
-
         new RemoveDuplicateLetters(),
-        new FB8(),
-        new FB9(),
 
         new _NewClassTemplate()
+    ));
+
+    listPrograms.addAll(Arrays.asList(
+        new Q0(),
+        new Q1(),
+        new Q2(),
+        new Q3(),
+        new Q4(),
+        new Q5(),
+        new Q6(),
+        new Q7(),
+        new Q8(),
+        new Q9(),
+        new Q10(),
+        new Q11(),
+        new Q12(),
+        new Q13(),
+        new Q14(),
+        new Q15(),
+        new Q16(),
+        new Q17(),
+        new Q18(),
+        new Q19(),
+        new Q20(),
+        new Q21(),
+        new Q22()
+    ));
+
+    listPrograms.addAll(Arrays.asList(
+                            new _NewClassTemplate()
+                        )
     );
+
   }
 
 
@@ -339,7 +395,7 @@ public class Main {
       System.out.println("Done with: " + b.getClass().getName());
     } catch (Exception e) {
 
-         e.printStackTrace();
+      e.printStackTrace();
 
 
     } finally {

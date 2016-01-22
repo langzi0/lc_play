@@ -1,4 +1,8 @@
-package Common;
+package Unsorted;
+
+import Common.Category;
+import Common.InvokableBase;
+import Common.Priority;
 
 /**
  * @author xbian
@@ -6,7 +10,7 @@ package Common;
  * This is the template for adding any new class
  */
 
-public class _NewClassTemplate4 extends InvokableBase {
+public class Q3 extends InvokableBase {
   // Add this class to Common/Main.java
   @Override
   public Priority getRunPriority() {
