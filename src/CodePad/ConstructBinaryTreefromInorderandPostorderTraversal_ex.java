@@ -24,7 +24,7 @@ public class ConstructBinaryTreefromInorderandPostorderTraversal_ex extends Invo
 
   @Override
   public Priority getRunPriority() {
-    return new Priority(/*yymdd*/151001, 0, Category.LeetCode);
+    return new Priority(/*yymdd*/160101, 0, Category.LeetCode);
   }
 
   @Override

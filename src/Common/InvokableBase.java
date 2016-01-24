@@ -46,7 +46,7 @@ public abstract class InvokableBase implements Invokeable {
       System.out.println("AssertFailed: " + msg + " Actual: " + val.toString());
     }
   }
-  //  @Override public Priority getRunPriority() {    return new Priority(/*yymdd*/151001, 0, Category.LeetCode);  }
+  //  @Override public Priority getRunPriority() {    return new Priority(/*yymdd*/160101, 0, Category.LeetCode);  }
 //  @Override public void run() {  /* will be called by base*/  }
 
 }

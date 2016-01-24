@@ -13,7 +13,7 @@ public class ContainsNearbyAlmostDuplicate extends InvokableBase {
   // Add this class to Common/Main.java
   @Override
   public Priority getRunPriority() {
-    return new Priority(151001, 0, Category.LeetCode);
+    return new Priority(160101, 0, Category.LeetCode);
   }
 
   @Override

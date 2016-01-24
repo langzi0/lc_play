@@ -81,7 +81,8 @@ public class JavaCollectionEx extends InvokableBase {
       }
     };
 
-    Thread t = new Thread(()-> {});
+    Thread t = new Thread(() -> {
+    });
     t.run();
     //new Callable<Integer>(()->{});
     // BasicJavacTask task = new BasicJavacTask(()->{});
@@ -125,15 +126,28 @@ public class JavaCollectionEx extends InvokableBase {
 
     public List<GraphNode> nbrs = new ArrayList<>();
     public int val;
+    public int
+        inDegree;
+        // For DAG, remember how man incoming node, for bidiectional, it is the size of nbrs.
 
     public GraphNode(int val) {
       this.val = val;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (!(obj instanceof GraphNode)) {
+        return false;
+      }
+      if (obj == this) {
+        return true;
+      }
+      return ((GraphNode) obj).val == this.val;
+    }
   }
 
-
   private void set_ops() {
-    visitGraph();
+    visitGraphBFS();
   }
 
   GraphNode buildGraph() {
@@ -174,7 +188,25 @@ use rangeClosed for this kind of situation.
   // We will visit a node, mark visited immediately and add it to queue(this make sure it will visited once and enque once)
 // queue store visited but not expanded node.
 
-  void visitGraph() {
+
+//  void DFS(GraphNode node, List<GraphNode> seq, Set<>) {
+//
+//  }
+
+  void visitGraphDFS() {
+    GraphNode root = buildGraph();
+    HashSet<GraphNode> visisted = new HashSet<GraphNode>();
+    Queue<GraphNode> queue = new LinkedList<GraphNode>();
+
+    Util.show("visitGraph starts");
+    visisted.add(root);
+    Util.show(root.val);
+    queue.add(root);
+
+    Util.show("visitGraph ends");
+  }
+
+  void visitGraphBFS() {
     GraphNode root = buildGraph();
     HashSet<GraphNode> visisted = new HashSet<GraphNode>();
     Queue<GraphNode> queue = new LinkedList<GraphNode>();
@@ -235,7 +267,6 @@ use rangeClosed for this kind of situation.
         set.add(val);
       }
     }
-
 
     Util.show(StringUtils
                   .join(listLinked.stream().map(p -> p.toString()).collect(Collectors.toList()),

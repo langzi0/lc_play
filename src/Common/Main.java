@@ -23,7 +23,7 @@ import Question.PrintNumbers;
 import Question.RandomWord;
 import Question.RemoveWordFromTree;
 import Question.Solution;
-import Unsorted.Q0;
+import Unsorted.WordDictionary;
 import Unsorted.Q1;
 import Unsorted.Q10;
 import Unsorted.Q11;
@@ -38,7 +38,7 @@ import Unsorted.Q19;
 import Unsorted.Q2;
 import Unsorted.Q20;
 import Unsorted.Q21;
-import Unsorted.Q22;
+import Unsorted.WordDictionaryAcceptedSolution;
 import Unsorted.Q3;
 import Unsorted.Q4;
 import Unsorted.Q5;
@@ -313,7 +313,7 @@ public class Main {
     ));
 
     listPrograms.addAll(Arrays.asList(
-        new Q0(),
+        new WordDictionary(),
         new Q1(),
         new Q2(),
         new Q3(),
@@ -335,7 +335,7 @@ public class Main {
         new Q19(),
         new Q20(),
         new Q21(),
-        new Q22()
+        new WordDictionaryAcceptedSolution()
     ));
 
     listPrograms.addAll(Arrays.asList(

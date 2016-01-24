@@ -12,7 +12,7 @@ public class PlusOne_ex extends InvokableBase {
 
   @Override
   public Priority getRunPriority() {
-    return new Priority(/*yymdd*/151001, 0, Category.LeetCode);
+    return new Priority(/*yymdd*/160101, 0, Category.LeetCode);
   }
 
   @Override
