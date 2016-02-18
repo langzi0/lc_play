@@ -5,12 +5,12 @@ import Common.InvokableBase;
 import Common.Priority;
 
 /**
- * @author xbian
+ * @author
  * @since 10/28/15
  * This is the template for adding any new class
  */
 
-public class Q8 extends InvokableBase {
+public class PermutationIter extends InvokableBase {
   // Add this class to Common/Main.java
   @Override
   public Priority getRunPriority() {
@@ -21,5 +21,6 @@ public class Q8 extends InvokableBase {
   public void run() {
     //Call your test in Common/Main.java
   }
+
 
 }

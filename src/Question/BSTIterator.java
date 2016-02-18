@@ -11,7 +11,7 @@ import Common.InvokableBase;
 import Common.Priority;
 
 /**
- * @author xbian
+ * @author
  * @since 10/28/15 This is the template for adding any new class
  */
 
@@ -33,10 +33,10 @@ public class BSTIterator extends InvokableBase {
   public class TreeNode {
 
     int val;
-    TreeNode left;
-    TreeNode right;
+  public TreeNode left;
+  public TreeNode right;
 
-    TreeNode(int x) {
+  public TreeNode(int x) {
       val = x;
       if (val == -999999) {
         val = Integer.MIN_VALUE;

@@ -1,7 +1,7 @@
 package Common;
 
 /**
- * @author xbian
+ * @author
  * @since 10/4/15
  */
 public class Priority {

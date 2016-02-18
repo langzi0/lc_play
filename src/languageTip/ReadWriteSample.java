@@ -12,7 +12,7 @@ import Common.InvokableBase;
 import Common.Priority;
 
 /**
- * Created by @author xbian @since 9/20/15.
+ * Created by @author  @since 9/20/15.
  */
 public class ReadWriteSample extends InvokableBase {
 

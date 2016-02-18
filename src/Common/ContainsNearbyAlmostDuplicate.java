@@ -4,7 +4,7 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 
 /**
- * @author xbian
+ * @author
  * @since 10/28/15
  * This is the template for adding any new class
  */

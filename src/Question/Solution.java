@@ -10,7 +10,7 @@ import Common.Priority;
 import Common.Util;
 
 /**
- * @author xbian
+ * @author
  * @since 10/28/15 This is the template for adding any new INSTRUCTIONS This is a programming test
  * To get familiarized with our coding environment, try our Sample Test
  * https://www.hackerrank.com/tests/sample You are free to choose any language from the list and

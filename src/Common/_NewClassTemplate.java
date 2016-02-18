@@ -1,7 +1,8 @@
 package Common;
 
+import java.util.*;
 /**
- * @author xbian
+ * @author 
  * @since 10/28/15
  * This is the template for adding any new class
  */
@@ -16,6 +17,7 @@ public class _NewClassTemplate extends InvokableBase {
   @Override
   public void run() {
     //Call your test in Common/Main.java
+    List a; // to keep java.util.*;
   }
 
 }

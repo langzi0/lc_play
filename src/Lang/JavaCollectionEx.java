@@ -23,7 +23,7 @@ import Common.Priority;
 import Common.Util;
 
 /**
- * Created by @author xbian @since 8/10/15.
+ * Created by @author  @since 8/10/15.
  */
 
 public class JavaCollectionEx extends InvokableBase {

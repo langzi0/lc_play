@@ -34,6 +34,11 @@ public class WordLadderII_bian_backtrace_recursive extends InvokableBase {
 
   @Override
   public void run() {
+    HashSet dict = new HashSet();
+    for(String s : new String[]{"hot","dot","dog","lot","log"}) dict.add(s);
+    findLadders("hit","cog", dict);
+
+
   }
 
   public ArrayList<ArrayList<String>> findLadders(String start, String end,
@@ -96,4 +101,8 @@ public class WordLadderII_bian_backtrace_recursive extends InvokableBase {
 
     return ret;
   }
+
+
+
+
 }

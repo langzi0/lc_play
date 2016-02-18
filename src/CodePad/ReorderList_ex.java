@@ -33,45 +33,7 @@ public class ReorderList_ex extends InvokableBase {
   }
 
   public void reorderList(ListNode head) {
-    if (head == null || head.next == null) {
-      return;
-    }
-    ListNode fast = head;
-    ListNode late = head;
-    while (fast.next != null && fast.next.next != null) {
-      fast = fast.next.next;
-      late = late.next;
-    }
-    ListNode ret = new ListNode(0);
-    ListNode cur = ret;
-    ListNode leftHalf = head;
-    ListNode rightHalf;
-    if (fast.next != null) {
-      rightHalf = reverseList(late.next);
-      late.next = null;
-    } else {
-      rightHalf = reverseList(late);
-      ListNode tmp = head;
-      while (tmp.next != late) {
-        tmp = tmp.next;
-      }
-      tmp.next = null;
-    }
-    leftHalf = head;
-    while (leftHalf != null && rightHalf != null) {
-      cur.next = leftHalf;
-      leftHalf = leftHalf.next;
-      cur = cur.next;
-      cur.next = rightHalf;
-      rightHalf = rightHalf.next;
-      cur = cur.next;
-    }
-    if (leftHalf != null) {
-      cur.next = leftHalf;
-    } else if (rightHalf != null) {
-      cur.next = rightHalf;
-    }
-    head = ret.next;
+    //
   }
 
   private ListNode reverseList(ListNode head) {

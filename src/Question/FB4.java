@@ -8,7 +8,7 @@ import Common.InvokableBase;
 import Common.Priority;
 
 /**
- * @author xbian
+ * @author
  * @since 10/28/15
  * This is the template for adding any new class
  * The gray code is a binary numeral system where two successive values differ in only one bit.

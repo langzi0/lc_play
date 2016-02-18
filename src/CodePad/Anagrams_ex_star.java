@@ -47,6 +47,7 @@ public class Anagrams_ex_star extends InvokableBase {
         map.put(sorted, new ArrayList<>());
       }
       List<String> list = map.get(sorted);
+      list.subList(1, 2);
       list.add(s);
     }
     return map.values().stream().collect(Collectors.toList());
@@ -62,6 +63,7 @@ public class Anagrams_ex_star extends InvokableBase {
   private String sort(String s) {
     char[] chs = s.toCharArray();
     Arrays.sort(chs);
+    //Arrays.sort(chs,0,1);
     return new String(chs);
   }
 

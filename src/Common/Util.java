@@ -3,7 +3,7 @@ package Common;
 import java.util.Objects;
 
 /**
- * @author xbian
+ * @author
  * @since 11/2/15
  */
 public class Util {

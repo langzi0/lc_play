@@ -24,9 +24,9 @@ import Question.RandomWord;
 import Question.RemoveWordFromTree;
 import Question.Solution;
 import Unsorted.WordDictionary;
-import Unsorted.Q1;
-import Unsorted.Q10;
-import Unsorted.Q11;
+import Unsorted.Count1sBefore;
+import Unsorted.GraphDFS;
+import Unsorted.Search;
 import Unsorted.Q12;
 import Unsorted.Q13;
 import Unsorted.Q14;
@@ -35,22 +35,22 @@ import Unsorted.Q16;
 import Unsorted.Q17;
 import Unsorted.Q18;
 import Unsorted.Q19;
-import Unsorted.Q2;
+import Unsorted.MarkReachableArea;
 import Unsorted.Q20;
 import Unsorted.Q21;
 import Unsorted.WordDictionaryAcceptedSolution;
-import Unsorted.Q3;
-import Unsorted.Q4;
-import Unsorted.Q5;
-import Unsorted.Q6;
-import Unsorted.Q7;
-import Unsorted.Q8;
-import Unsorted.Q9;
+import Unsorted.VersionComparison;
+import Unsorted.ExcelColumnTitleToNumber;
+import Unsorted.SQLStatment;
+import Unsorted.TestJustification;
+import Unsorted.PermutationIter;
+import Unsorted.MinCoverSet;
+import Unsorted.TreePrintZigZapLineByLineIteration;
 import languageTip.ReadWriteSample;
 import languageTip.ReflectionSample;
 
 /**
- * Created by @author xbian @since 8/6/15.
+ * Created by @author  @since 8/6/15.
  */
 public class Main {
 
@@ -280,7 +280,7 @@ public class Main {
         new WordBreakII_ex(),
         new WordLadder_ex(),
         new WordLadderII_bian_backtrace_recursive(),
-        new WordSearch_ex(),
+        new WordSearch_ex_x(),
         new RandomWord(),
         new ZigZagConversion_bian_ex(),
         new ReadWriteSample(),
@@ -314,17 +314,17 @@ public class Main {
 
     listPrograms.addAll(Arrays.asList(
         new WordDictionary(),
-        new Q1(),
-        new Q2(),
-        new Q3(),
-        new Q4(),
-        new Q5(),
-        new Q6(),
-        new Q7(),
-        new Q8(),
-        new Q9(),
-        new Q10(),
-        new Q11(),
+        new Count1sBefore(),
+        new MarkReachableArea(),
+        new VersionComparison(),
+        new ExcelColumnTitleToNumber(),
+        new SQLStatment(),
+        new TestJustification(),
+        new PermutationIter(),
+        new MinCoverSet(),
+        new TreePrintZigZapLineByLineIteration(),
+        new GraphDFS(),
+        new Search(),
         new Q12(),
         new Q13(),
         new Q14(),

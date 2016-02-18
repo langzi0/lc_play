@@ -17,7 +17,7 @@ import Common.Priority;
 import Common.Util;
 
 /**
- * @author xbian
+ * @author
  * @since 10/28/15 This is the template for adding any new class
  */
 //http://www.careercup.com/page?pid=facebook-interview-questions  facebook

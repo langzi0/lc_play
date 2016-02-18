@@ -8,7 +8,7 @@ import Common.InvokableBase;
 import Common.Priority;
 
 /**
- * @author xbian
+ * @author
  * @since 10/19/15
  */
 public class RandomWord extends InvokableBase {

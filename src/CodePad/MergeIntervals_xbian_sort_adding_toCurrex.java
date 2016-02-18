@@ -73,7 +73,7 @@ public class MergeIntervals_xbian_sort_adding_toCurrex extends InvokableBase {
 
   public List<Interval> merge(List<Interval> intervals) {
     Collections.sort(intervals, (Interval a, Interval b)-> a.start - b.start);
-
+    Collections.binarySearch(intervals, new Interval(1,1), (Interval a, Interval b)-> a.start - b.start);
     int i = 0;
     ArrayList<Interval> listRet = new ArrayList<>();
     // pick out the first element,  keep on merge the new element into the current

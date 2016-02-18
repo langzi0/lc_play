@@ -9,7 +9,7 @@ import Common.Priority;
 import Common.Util;
 
 /**
- * @author xbian
+ * @author
  * @since 10/28/15 This is the template for adding any new class
  *
  * Design a data structure that supports the following two operations:

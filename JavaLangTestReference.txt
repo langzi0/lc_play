@@ -45,9 +45,10 @@ Queue <Node> q = new LinkedList<Node>();
 q.isEmpty();
 q.add(new Node());
 Node x = q.remove();
+NOde y = q.peek();
 
 Map<String, List<String>> mapRootToList = new HashMap<>();
-mapRootToList.entrySet().stream().forEach();
+mapRootToList.entrySet().stream().forEach(){};
     for (String s : strs) {
       String root = sort(s);
       if (!mapRootToList.containsKey(root)) {
@@ -87,26 +88,7 @@ Import java.util.Scanner
         System.out.print(numListText);
 Question:
 Note:
-Question:
-Note:
-Question:
-Note:
-Question:
-Note:
-Question:
-Note:
-Question:
-Note:
-Question:
-Note:
-Question:
-Note:
-Question:
-Note:
-Question:
-Note:
-Question:
-Note:
+Question
 
 Variables are not polymorphic in Java.
 They do not override one another.  When you make variable of the same in subclass, it will hide.
