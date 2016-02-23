@@ -31,57 +31,70 @@ public class BalancedBinaryTree_ex extends InvokableBase {
         new Integer[]{2, null, 4, 3, null, null, 5, null, null})));
 
     System.out.println(isBalanced(TreeNode.buildTreeFromPreorderWithNull(
-        new Integer[]{ null})));
+        new Integer[]{null})));
 
     System.out.println(isBalanced(TreeNode.buildTreeFromPreorderWithNull(
-        new Integer[]{1, null, 2, null, 3,  null, null})));
+        new Integer[]{1, null, 2, null, 3, null, null})));
 
     System.out.println(isBalanced(TreeNode.buildTreeFromPreorderWithNull(
-        new Integer[]{2,  null, null})));
+        new Integer[]{2, null, null})));
   }
 
   private boolean isBalanced(TreeNode root) {
     TreeNode.showPreOrder(root, true);
 
     Boolean isB = true;
-    Result result = depth(root);
-    return result.isB;
+    Status status = depth(root);
+    return status.isB;
   }
 
-  class Result {
+  class Status {
+    // no need to use public as default is same package level visibility
+    int depth;
+    boolean isB;
 
-    public int depth;
-    public boolean isB;
-
-    public Result(int depth, boolean isB) {
+    Status(int depth, boolean isB) {
       this.depth = depth;
       this.isB = isB;
     }
   }
 
-  private Result depth(TreeNode root) {
+  private Status depth(TreeNode root) {
     // each tree return depth, and is
     if (root == null) {
-      return new Result(0, true);
+      return new Status(0, true);
     }
 
-    Result rd = depth(root.right);
-    Result ld = depth(root.left);
+    Status rd = depth(root.right);
+    Status ld = depth(root.left);
 
-    return new Result(rd.depth > ld.depth ? rd.depth + 1 : ld.depth + 1,
-                   rd.isB && ld.isB && (ld.depth - rd.depth < 2 && rd.depth - ld.depth < 2));
+    return new Status(rd.depth > ld.depth ? rd.depth + 1 : ld.depth + 1,
+                      rd.isB && ld.isB && (ld.depth - rd.depth < 2 && rd.depth - ld.depth < 2));
+
+  }
+
+  private Status checkTree(TreeNode root)
+  {
+    if (root == null)
+      return new Status(0, true);
+    Status sl = checkTree(root.left);
+    Status sr = checkTree(root.right);
+    return new Status(Math.max(sl.depth, sr.depth) + 1, sl.isB && sr.isB && Math.abs(sl.depth - sr.depth)<=1);
 
   }
 
 
-  public int determine(TreeNode root) {
+  public boolean determine(TreeNode root) {
     // we need to know left and right depth,  -1 to represent it is unbalanced.
-    // We return return result of MaxDepth and  -1;
-return 0;
+    // We return result of MaxDepth and  -1;
+
+    Status status = checkTree(root);
+
+    return status.isB;
 
 
   }
-  
+
 
   public int determineOld(TreeNode root) {
     if (root == null) {

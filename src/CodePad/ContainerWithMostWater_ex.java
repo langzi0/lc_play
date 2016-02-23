@@ -25,6 +25,8 @@ public class ContainerWithMostWater_ex extends InvokableBase {
   }
 
   public int maxArea(int[] height) {
+
+
     int len = height.length, low = 0, high = len - 1;
     int maxArea = 0;
     while (low < high) {
