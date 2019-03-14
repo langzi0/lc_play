@@ -2,7 +2,6 @@ CodePad From LC
 ========
 This was forked from https://github.com/yh1213/leetcode-3.
 
-
 This is a definitely a draft project to remember my progress in leetcode.  Appreciate the original owner who created the problem set. 
 
 Intellij instructions.
