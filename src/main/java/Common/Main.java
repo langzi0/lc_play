@@ -1,53 +1,16 @@
 package Common;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import CodePad.*;
 import Lang.JavaCollectionEx;
 import Lang.JavaLang;
 import Lang.PeekingIteratorModule;
-import Question.BSTIterator;
-import Question.CQuestion1;
-import Question.Combination;
-import Question.CombinationOfCoins;
-import Question.FB4;
-import Question.FB6;
-import Question.FBCoverStringMinSet;
-import Question.FBCoveringSegment;
-import Question.FBQuestions;
-import Question.FindPairWithGivingDiff;
-import Question.FirstBadVersion;
-import Question.GQuestion2;
-import Question.PrintNumbers;
-import Question.RandomWord;
-import Question.RemoveWordFromTree;
-import Question.Solution;
-import Unsorted.WordDictionary;
-import Unsorted.Count1sBefore;
-import Unsorted.GraphDFS;
-import Unsorted.Search;
-import Unsorted.Q12;
-import Unsorted.Q13;
-import Unsorted.Q14;
-import Unsorted.Q15;
-import Unsorted.Q16;
-import Unsorted.Q17;
-import Unsorted.Q18;
-import Unsorted.Q19;
-import Unsorted.MarkReachableArea;
-import Unsorted.Q20;
-import Unsorted.Q21;
-import Unsorted.WordDictionaryAcceptedSolution;
-import Unsorted.VersionComparison;
-import Unsorted.ExcelColumnTitleToNumber;
-import Unsorted.SQLStatment;
-import Unsorted.TestJustification;
-import Unsorted.PermutationIter;
-import Unsorted.MinCoverSet;
-import Unsorted.TreePrintZigZapLineByLineIteration;
+import Question.*;
+import Unsorted.*;
 import languageTip.ReadWriteSample;
 import languageTip.ReflectionSample;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by @author  @since 8/6/15.

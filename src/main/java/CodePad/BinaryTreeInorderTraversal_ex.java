@@ -1,17 +1,16 @@
 package CodePad;
 
-import com.sun.deploy.util.StringUtils;
+import Common.Category;
+import Common.InvokableBase;
+import Common.Priority;
+import Common.Util;
+import org.apache.commons.lang3.StringUtils;
+import sharedDataStructure.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 import java.util.stream.Collectors;
-
-import Common.Category;
-import Common.InvokableBase;
-import Common.Priority;
-import Common.Util;
-import sharedDataStructure.TreeNode;
 
 /**
  * For example: Given binary tree {1,#,2,3}, 1 \ 2 / 3 return [1,3,2].

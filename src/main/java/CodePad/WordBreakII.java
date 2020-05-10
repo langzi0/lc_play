@@ -1,16 +1,11 @@
 package CodePad;
 
-import com.sun.deploy.util.StringUtils;
-
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
-
 import Common.Category;
 import Common.InvokableBase;
 import Common.Priority;
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.*;
 
 /**
  * Given a string s and a dictionary of words dict, add spaces in s to construct a sentence where
