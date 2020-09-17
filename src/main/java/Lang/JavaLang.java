@@ -27,7 +27,7 @@ public class JavaLang extends InvokableBase {
     method_parameter_modifiation();
     run_lamdaAsStream();
     run_interface_anonymous_class();
-  }
+  } 
 
 
 // 111111111111111111111111111111111111111111111111111111
