@@ -80,7 +80,7 @@ public class Main {
               }
             }
           }
-        } catch (Exception ex) {
+        } catch (Throwable ex) {
           // Silence is gold
         }
       } else {

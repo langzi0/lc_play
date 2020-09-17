@@ -18,7 +18,7 @@ public class JavaLang extends InvokableBase {
 
   @Override
   public Priority getRunPriority() {
-    return new Priority(200510, 01, Category.notClassified);
+    return new Priority(200916, 03, Category.notClassified);
   }
 
   public void run() {
