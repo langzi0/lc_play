@@ -1,5 +1,5 @@
 package Common;
-
+//
 public abstract class InvokableBase implements Invokeable {
   @Override  public void run(){
         String s = String.format("InvokableBase: GetClassName: %s  Priority is: %S\n ", this.getClass().getName(), getRunPriority().getDaySeq());
@@ -46,7 +46,4 @@ public abstract class InvokableBase implements Invokeable {
       System.out.println("AssertFailed: " + msg + " Actual: " + val.toString());
     }
   }
-  //  @Override public Priority getRunPriority() {    return new Priority(/*yymdd*/160101, 0, Category.LeetCode);  }
-//  @Override public void run() {  /* will be called by base*/  }
-
 }

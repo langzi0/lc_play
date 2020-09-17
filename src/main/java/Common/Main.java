@@ -1,325 +1,108 @@
 package Common;
 
-import CodePad.*;
-import Lang.JavaCollectionEx;
-import Lang.JavaLang;
-import Lang.PeekingIteratorModule;
-import Question.*;
-import Unsorted.*;
-import languageTip.ReadWriteSample;
-import languageTip.ReflectionSample;
-
+import java.io.File;
+import java.io.FileInputStream;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.jar.JarEntry;
+import java.util.jar.JarInputStream;
+import java.util.stream.Collectors;
 
-/**
- * Created by @author  @since 8/6/15.
- */
 public class Main {
 
   static ArrayList<InvokableBase> listPrograms = new ArrayList<>();
 
-  static void addingAllNewClasses() {
-    listPrograms.addAll(Arrays.asList(
-        // Add new classes here
-        new ReflectionSample(),
-        new JavaLang(),
-        // LeetCode example
-        new AddBinary(),
-        new AddTwoNumbers(),
-        new Anagrams(),
-        new BalancedBinaryTree(),
-        new BestTimetoBuyandSellStock(),
-        new BestTimetoBuyandSellStockII(),
-        new BestTimetoBuyandSellStockIII(),
-        new BinaryTreeInorderTraversal(),
-        new BinaryTreeLevelOrderTraversalII(),
-        new BinaryTreeMaximumPathSum(),
-        new Candy(),
-        new ClimbingStairs(),
-        new Combinations(),
-        new CombinationSum(),
-        new ConstructBinaryTreefromInorderandPostorderTraversal(),
-        new ContainerWithMostWater(),
-        new ConvertSortedArraytoBinarySearchTree(),
-        new ConvertSortedListtoBinarySearchTree(),
-        new CopyListwithRandomPointer(),
-        new CountandSay(),
-        new DecodeWays(),
-        new DistinctSubsequences(),
-        new DivideTwoIntegers(),
-        new EditDistance(),
-        new FirstMissingPositive(),
-        new FlattenBinaryTreetoLinkedList(),
-        new FourSum(),
-        new GenerateParentheses(),
-        new GrayCode(),
-        new ImplementStrStr(),
-        new IntegertoRoman(),
-        new InterleavingString(),
-        new MergeIntervals(),
-        new JumpGame(),
-        new LargestRectangleinHistogram(),
-        new LengthofLastWord(),
-        new LetterCombinationsofaPhoneNumber(),
-        new LinkedListCycle(),
-        new LongestCommonPrefix(),
-        new LongestConsecutiveSequence(),
-        new LongestPalindromicSubstring(),
-        new LongestSubstringWithoutRepeatingCharacters(),
-        new LongestValidParentheses(),
-        new MaximalRectangle(),
-        new MergeIntervals(),
-        new MergekSortedLists(),
-        new MergeSortedArray(),
-        new MergeTwoSortedLists(),
-        new MinimumDepthofBinaryTree(),
-        new MinimumPathSum(),
-        new MinimumWindowSubstring(),
-        new NextPermutation(),
-        new PalindromeNumber(),
-        new PalindromePartitioning(),
-        new PalindromePartitioningII(),
-        new PartitionList(),
-        new PascalTriangle(),
-        new PathSum(),
-        new PathSumII(),
-        new PermutationsII(),
-        new PlusOne(),
-        new PopulatingNextRightPointersinEachNode(),
-        new PopulatingNextRightPointersinEachNodeII(),
-        new PowXN(),
-        new RecoverBinarySearchTree(),
-        new RemoveDuplicatesfromSortedArray(),
-        new RemoveDuplicatesfromSortedList(),
-        new RemoveDuplicatesfromSortedListII(),
-        new RemoveElement(),
-        new RemoveNthNodeFromEndofList(),
-        new ReorderList(),
-        new RestoreIPAddresses(),
-        new ReverseInteger(),
-        new ReverseLinkedListII(),
-        new ReverseNodesinkGroup(),
-        new RomantoInteger(),
-        new RotateImage(),
-        new SameTree(),
-        new ScrambleString(),
-        new Searcha2DMatrix(),
-        new SearchforaRange(),
-        new SearchinRotatedSortedArray(),
-        new SearchinRotatedSortedArrayII(),
-        new SearchInsertPosition(),
-        new SetMatrixZeroes(),
-        new SingleNumber(),
-        new SortColors(),
-        new SpiralMatrix(),
-        new Sqrtx(),
-        new StringtoIntegerAtoi(),
-        new Subsets(),
-        new SubsetsII(),
-        new SubstringwithConcatenationofAllWords(),
-        new SumRoottoLeafNumbers(),
-        new SurroundedRegions(),
-        new SwapNodesinPairs(),
-        new SymmetricTree(),
-        new ThreeSum(),
-        new Triangle(),
-        new TwoSum(),
-        new UniqueBinarySearchTrees(),
-        new ValidateBinarySearchTree(),
-        new ValidPalindrome(),
-        new ValidParentheses(),
-        new WordBreak(),
-        new WordBreakII(),
-        new WordLadder(),
-        new WordLadderII(),
-        new WordSearch(),
-        new ZigZagConversion(),
-        new AddBinary_ex(),
-        new AddTwoNumbers_ex(),
-        new Anagrams_ex_star(),
-        new BalancedBinaryTree_ex(),
-        new BestTimetoBuyandSellStock_ex(),
-        new BestTimetoBuyandSellStockII_ex(),
-        new BestTimetoBuyandSellStockIII_ex(),
-        new BinaryTreeInorderTraversal_ex(),
-        new BinaryTreeLevelOrderTraversalII_ex(),
-        new BinaryTreeMaximumPathSum_ex(),
-        new Candy_ex(),
-        new ClimbingStairs_ex(),
-        new Combinations_ex(),
-        new CombinationSum_ex(),
-        new ConstructBinaryTreefromInorderandPostorderTraversal_ex(),
-        new ContainerWithMostWater_ex(),
-        new ConvertSortedArraytoBinarySearchTree_ex(),
-        new ConvertSortedListtoBinarySearchTree_ex(),
-        new CopyListwithRandomPointer_ex(),
-        new CountandSay_ex(),
-        new DecodeWays_ex(),
-        new DistinctSubsequences_ex(),
-        new DivideTwoIntegers_ex(),
-        new EditDistance_ex(),
-        new FirstMissingPositive_ex(),
-        new FlattenBinaryTreetoLinkedList_ex(),
-        new FourSum_ex(),
-        new GenerateParentheses_ex(),
-        new GrayCode_ex(),
-        new ImplementStrStr_ex(),
-        new IntegertoRoman_ex(),
-        new InterleavingString_ex(),
-        new MergeIntervals_xbian_sort_adding_toCurrex(),
-        new JumpGame_ex(),
-        new LargestRectangleinHistogram_ex(),
-        new LengthofLastWord_ex(),
-        new LetterCombinationsofaPhoneNumber_ex(),
-        new LinkedListCycle_ex(),
-        new LongestCommonPrefix_ex(),
-        new LongestConsecutiveSequence_ex(),
-        new LongestPalindromicSubstring_ex(),
-        new LongestSubstringWithoutRepeatingCharacters_ex(),
-        new LongestValidParentheses_ex(),
-        new MaximalRectangle_ex(),
-        new MergeIntervals_xbian_sort_adding_toCurrex(),
-        new MergekSortedLists_ex(),
-        new MergeSortedArray_ex(),
-        new MergeTwoSortedLists_ex(),
-        new MinimumDepthofBinaryTree_ex(),
-        new MinimumPathSum_ex(),
-        new MinimumWindowSubstring_ex(),
-        new NextPermutation_ex(),
-        new PalindromeNumber_ex(),
-        new PalindromePartitioning_ex(),
-        new PalindromePartitioningII_ex(),
-        new PartitionList_ex(),
-        new PascalTriangle_ex(),
-        new PathSum_ex(),
-        new PathSumII_ex(),
-        new PermutationsII_ex(),
-        new PlusOne_ex(),
-        new PopulatingNextRightPointersinEachNode_ex(),
-        new PopulatingNextRightPointersinEachNodeII_ex(),
-        new PowXN_ex(),
-        new RecoverBinarySearchTree_ex(),
-        new RemoveDuplicatesfromSortedArray_ex(),
-        new RemoveDuplicatesfromSortedList_ex(),
-        new RemoveDuplicatesfromSortedListII_ex(),
-        new RemoveElement_ex(),
-        new RemoveNthNodeFromEndofList_ex(),
-        new ReorderList_ex(),
-        new RestoreIPAddresses_ex(),
-        new ReverseInteger_ex(),
-        new ReverseLinkedListII_ex(),
-        new ReverseNodesinkGroup_ex(),
-        new RomantoInteger_ex(),
-        new RotateImage_ex(),
-        new SameTree_ex(),
-        new ScrambleString_ex(),
-        new Searcha2DMatrix_ex(),
-        new SearchforaRange_ex(),
-        new SearchinRotatedSortedArray_ex(),
-        new SearchinRotatedSortedArrayII_ex(),
-        new SearchInsertPosition_ex(),
-        new SetMatrixZeroes_ex(),
-        new SingleNumber_ex(),
-        new SortColors_ex(),
-        new SpiralMatrix_ex(),
-        new Sqrtx_ex(),
-        new StringtoIntegerAtoi_ex(),
-        new Subsets_ex(),
-        new SubsetsII_ex(),
-        new SubstringwithConcatenationofAllWords_ex(),
-        new SumRoottoLeafNumbers_ex(),
-        new SurroundedRegions_ex_xbian(),
-        new SwapNodesinPairs_ex(),
-        new SymmetricTree_ex(),
-        new ThreeSum_ex(),
-        new Triangle_ex(),
-        new TwoSum_ex(),
-        new UniqueBinarySearchTrees_ex(),
-        new ValidateBinarySearchTree_ex(),
-        new ValidPalindrome_ex(),
-        new ValidParentheses_ex(),
-        new WordBreak_ex(),
-        new WordBreakII_ex(),
-        new WordLadder_ex(),
-        new WordLadderII_bian_backtrace_recursive(),
-        new WordSearch_ex_x(),
-        new RandomWord(),
-        new ZigZagConversion_bian_ex(),
-        new ReadWriteSample(),
-        new PrintNumbers(),
-        new JavaCollectionEx()));
+  static public void main(String[] args) throws IllegalAccessException, InvocationTargetException, InstantiationException {
+    List<String> packages = Arrays.asList("CodePad", "Lang", "Question", "Unsorted");
+    runTopPriorityFromPackages(packages);
+    // runTopPriority();
+    // runCategory(InvokableBase.Category.Language);
+  }
 
-    listPrograms.addAll(Arrays.asList(
-        // Adding anything new here like
-        new _NewClassTemplate(),
-        new ContainsNearbyAlmostDuplicate(),
-        new FBCoverStringMinSet(),
-        new FindPairWithGivingDiff(),
-        new CombinationOfCoins(),
-        new FirstBadVersion(),
-        new FB4(),
-        new BSTIterator(),
-        new FB6(),
-        new FBCoveringSegment(),
-        new GQuestion2(),
-        new Combination(),
-        new FBQuestions(),
-        new PeekingIteratorModule(),
-        new Solution(),
-        new CQuestion1(),
-        new RemoveWordFromTree(),
+  static void runTopPriorityFromPackages(List<String> packagesStartNames) {
+    ClassLoader classLoader = Main.class.getClassLoader();
+    List<Class<?>> allClasses =  packagesStartNames.stream().map(Main::getClassesInPackage)
+        .flatMap(list->list.stream())
+        .collect(Collectors.toList());
 
-        new RemoveDuplicateLetters(),
+    Integer topPriority = allClasses.stream().map(a -> {
+      try {
+        Class aClass = classLoader.loadClass(a.getName());
+        if (aClass.getSuperclass() == InvokableBase.class) {
+          InvokableBase obj = (InvokableBase) aClass.getDeclaredConstructor().newInstance();
+          return obj.getRunPriority().getDaySeq();
+        }
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+      return -1;
+    }).max(Integer::compareTo).orElse(0);
 
-        new _NewClassTemplate()
-    ));
-
-    listPrograms.addAll(Arrays.asList(
-        new WordDictionary(),
-        new Count1sBefore(),
-        new MarkReachableArea(),
-        new VersionComparison(),
-        new ExcelColumnTitleToNumber(),
-        new SQLStatment(),
-        new TestJustification(),
-        new PermutationIter(),
-        new MinCoverSet(),
-        new TreePrintZigZapLineByLineIteration(),
-        new GraphDFS(),
-        new Search(),
-        new Q12(),
-        new Q13(),
-        new Q14(),
-        new Q15(),
-        new Q16(),
-        new Q17(),
-        new Q18(),
-        new Q19(),
-        new Q20(),
-        new Q21(),
-        new WordDictionaryAcceptedSolution()
-    ));
-
-    listPrograms.addAll(Arrays.asList(
-                            new _NewClassTemplate()
-                        )
-    );
+    allClasses.stream().forEach(a -> {
+      try {
+        Class aClass = classLoader.loadClass(a.getName());
+        if (aClass.getSuperclass() == InvokableBase.class) {
+          InvokableBase obj = (InvokableBase) aClass.getDeclaredConstructor().newInstance();
+          if (obj.getRunPriority().getDaySeq() >= topPriority) {
+            obj.run();
+          }
+        }
+      } catch (Throwable th) {
+        th.printStackTrace();
+      }
+    });
 
   }
 
+  private static final List<Class<?>> getClassesInPackage(String packageName) {
+    String path = packageName.replaceAll("\\.", File.separator);
+    List<Class<?>> classes = new ArrayList<>();
+    String[] classPathEntries = System.getProperty("java.class.path").split(
+        System.getProperty("path.separator")
+    );
 
-  static public void main(String[] args) {
-    addingAllNewClasses();
-    runTopPriority();
-    // runCategory(InvokableBase.Category.Language);
+    String name;
+    for (String classpathEntry : classPathEntries) {
+      if (classpathEntry.endsWith(".jar")) {
+        File jar = new File(classpathEntry);
+        try {
+          JarInputStream is = new JarInputStream(new FileInputStream(jar));
+          JarEntry entry;
+          while((entry = is.getNextJarEntry()) != null) {
+            name = entry.getName();
+            if (name.endsWith(".class")) {
+              if (name.contains(path) && name.endsWith(".class")) {
+                String classPath = name.substring(0, entry.getName().length() - 6);
+                classPath = classPath.replaceAll("[\\|/]", ".");
+                classes.add(Class.forName(classPath));
+              }
+            }
+          }
+        } catch (Exception ex) {
+          // Silence is gold
+        }
+      } else {
+        try {
+          File base = new File(classpathEntry + File.separatorChar + path);
+          for (File file : base.listFiles()) {
+            name = file.getName();
+            if (name.endsWith(".class")) {
+              name = name.substring(0, name.length() - 6);
+              classes.add(Class.forName(packageName + "." + name));
+            }
+          }
+        } catch (Exception ex) {
+          // Silence is gold
+        }
+      }
+    }
 
+    return classes;
   }
 
   static void runTopPriority() {
-
-    // Stream<InvokableBase> stream = listPrograms.stream();
-
     Integer topPriority = listPrograms.stream().
         mapToInt(p -> p.getRunPriority().getDaySeq()).max().orElse(0);
     listPrograms.stream().filter(p -> p.getRunPriority().getDaySeq().equals(topPriority))

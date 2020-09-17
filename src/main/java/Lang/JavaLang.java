@@ -1,14 +1,15 @@
 package Lang;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Stream;
-
 import Common.Category;
 import Common.InvokableBase;
 import Common.Priority;
 import Common.Util;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * Created by @author  @since 8/10/15.
@@ -17,7 +18,7 @@ public class JavaLang extends InvokableBase {
 
   @Override
   public Priority getRunPriority() {
-    return new Priority(151029, 01, Category.notClassified);
+    return new Priority(200510, 01, Category.notClassified);
   }
 
   public void run() {
@@ -27,6 +28,7 @@ public class JavaLang extends InvokableBase {
     run_lamdaAsStream();
     run_interface_anonymous_class();
   }
+
 
 // 111111111111111111111111111111111111111111111111111111
   // Anonymous class
@@ -189,7 +191,7 @@ public class JavaLang extends InvokableBase {
 
     //Typical filter , map, forEach do action
 
-    stream.filter(p -> p.value == 2)
+    fooList.stream().filter(p -> p.value == 2)
         .map(p -> new Bar(p.value * p.value))
         .forEach(bar -> System.out.println("bar is" + bar.bar));
   }

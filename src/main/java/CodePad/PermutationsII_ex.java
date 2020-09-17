@@ -1,10 +1,10 @@
 package CodePad;
 
-import java.util.ArrayList;
-
 import Common.Category;
 import Common.InvokableBase;
 import Common.Priority;
+
+import java.util.ArrayList;
 
 /**
  * Given a collection of numbers that might contain duplicates, return all possible unique
@@ -17,11 +17,12 @@ public class PermutationsII_ex extends InvokableBase {
 
   @Override
   public Priority getRunPriority() {
-    return new Priority(/*yymdd*/160101, 0, Category.LeetCode);
+    return new Priority(/*yymdd*/200915, 1, Category.LeetCode);
   }
 
   @Override
   public void run() {
+    permuteUnique(new int[]{1,2,3,4});
   }
 
   public ArrayList<ArrayList<Integer>> permuteUnique(int[] num) {
