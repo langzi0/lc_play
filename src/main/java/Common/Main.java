@@ -1,10 +1,15 @@
 package Common;
 
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.filefilter.DirectoryFileFilter;
+import org.apache.commons.io.filefilter.RegexFileFilter;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.jar.JarEntry;
 import java.util.jar.JarInputStream;
@@ -15,7 +20,7 @@ public class Main {
   static ArrayList<InvokableBase> listPrograms = new ArrayList<>();
 
   static public void main(String[] args) throws IllegalAccessException, InvocationTargetException, InstantiationException {
-    List<String> packages = Arrays.asList("CodePad", "Lang", "Question", "Unsorted");
+    List<String> packages = Arrays.asList("CodePad", "Lang", "Question", "Unsorted");//"LanguageTip",
     runTopPriorityFromPackages(packages);
     // runTopPriority();
     // runCategory(InvokableBase.Category.Language);
@@ -35,7 +40,6 @@ public class Main {
           return obj.getRunPriority().getDaySeq();
         }
       } catch (Exception e) {
-        e.printStackTrace();
       }
       return -1;
     }).max(Integer::compareTo).orElse(0);
@@ -56,13 +60,14 @@ public class Main {
 
   }
 
-  private static final List<Class<?>> getClassesInPackage(String packageName) {
-    String path = packageName.replaceAll("\\.", File.separator);
+  private static final List<Class<?>> getClassesInPackage(String packageNameStarter) {
+    String path = packageNameStarter.replaceAll("\\.", File.separator);
     List<Class<?>> classes = new ArrayList<>();
-    String[] classPathEntries = System.getProperty("java.class.path").split(
+    String[] classPathEntries1 = System.getProperty("java.class.path").split(
         System.getProperty("path.separator")
     );
 
+    List<String> classPathEntries = Arrays.stream(classPathEntries1).filter(m->!m.contains(".m2")).collect(Collectors.toList());
     String name;
     for (String classpathEntry : classPathEntries) {
       if (classpathEntry.endsWith(".jar")) {
@@ -86,11 +91,19 @@ public class Main {
       } else {
         try {
           File base = new File(classpathEntry + File.separatorChar + path);
-          for (File file : base.listFiles()) {
+          // Need to find all files listed recursively
+          Collection<File> files = FileUtils.listFilesAndDirs(
+              base,
+              new RegexFileFilter("^(.*class)"),
+              DirectoryFileFilter.DIRECTORY
+          );
+
+        for (File file : files) {
             name = file.getName();
             if (name.endsWith(".class")) {
-              name = name.substring(0, name.length() - 6);
-              classes.add(Class.forName(packageName + "." + name));
+              name = file.getAbsolutePath().substring(file.getAbsolutePath().indexOf(packageNameStarter),
+                  file.getAbsolutePath().indexOf(".class")).replace(File.separatorChar, '.');
+              classes.add(Class.forName(name));
             }
           }
         } catch (Exception ex) {

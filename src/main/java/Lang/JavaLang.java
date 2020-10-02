@@ -27,7 +27,7 @@ public class JavaLang extends InvokableBase {
     method_parameter_modifiation();
     run_lamdaAsStream();
     run_interface_anonymous_class();
-  } 
+  }
 
 
 // 111111111111111111111111111111111111111111111111111111
@@ -147,7 +147,9 @@ public class JavaLang extends InvokableBase {
     }).start();
 
     //Java 8 way:
-    new Thread(() -> System.out.println("In Java8, Lambda expression rocks !!")).start();
+    new Thread(
+        () -> System.out.println("In Java8, Lambda expression rocks !!")
+    ).start();
 
     // Read more:http:
     //javarevisited.blogspot.com/2014/02/10-example-of-lambda-expressions-in-java8.html#ixzz3mKi4BiYI
@@ -194,6 +196,10 @@ public class JavaLang extends InvokableBase {
     fooList.stream().filter(p -> p.value == 2)
         .map(p -> new Bar(p.value * p.value))
         .forEach(bar -> System.out.println("bar is" + bar.bar));
+    fooList.stream().filter(p -> p.value == 2)
+        .map(p -> new Bar(p.value * p.value))
+        .reduce(new Bar(0), (a, b)->new Bar(a.bar + b.bar));
+
   }
 
   class Foo {

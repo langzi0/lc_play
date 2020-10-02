@@ -4,20 +4,34 @@ import Common.Category;
 import Common.InvokableBase;
 import Common.Priority;
 
+import java.util.Arrays;
+
 public class LargestTimeFromDigits extends InvokableBase {
 
   @Override
   public Priority getRunPriority() {
-    return new Priority(/*yymdd*/200916, 0, Category.LeetCode);
+    return new Priority(/*yymdd*/200925, 0, Category.LeetCode);
   }
 
   @Override
   public void run() {
-    new LargestTimeFromDigits().largestTimeFromDigits(
-        new int[]{
-            1,2,3,4});
+
+    Result r = run1(new int[]{1,2,3,4});
+    r = run1(new int[]{5,5,5,5});
+    r = run1(new int[]{0,0,0,0});
+    r = run1(new int[]{1,0,0,0});
+    r = run1(new int[]{9,5,2,3});
+
   }
 
+
+  private Result run1(int[] casex){
+    Result result = new Result();
+    new LargestTimeFromDigits().maxMinute(casex, 0, result);
+    if (result.maxMin > 0){
+
+    }return result;
+  }
   /*
   *
   *
@@ -61,74 +75,38 @@ arr.length == 4
   class Result {
     int maxMin = -1;
     int[] array = new int[4];
+    int cnt = 0;
   }
 
+  // Swap pos with pos -  pos.length -1
+  // We want to share a gbobal variable of result, another way is to use a carried with variable
 
-   private Result maxMinute(int[] array, int pos){
-         return null;
+   private void maxMinute(int[] array, int pos, Result result){
+         if (pos< array.length - 1){
+           for (int i = pos; i< array.length; i++) {
+             swap(array, pos, i);
+             maxMinute(array, pos + 1, result);
+             swap(array, pos, i);
+           }
+         } else {
+           result.cnt ++;
+           if (evalMin(array) > result.maxMin){
+             result.maxMin = evalMin(array);
+             result.array = Arrays.copyOf(array, array.length);
+           }
+         }
 
    }
-
-    public String largestTimeFromDigits(int[] arr) {
-      //get first two number first.
-
-      for (int i = 0; i< 4; i++){
-        for (int j = i; j < 4; j++){
-          swap(arr, i, j);
-          int val = evalMin(arr);
-          if (val > nmin){
-            copyInts(arr, arrsave);
-            nmin = val;
-          }
-          swap(arr, i, j);
-        }
-      }
-      if (nmin == -1)
-        return "";
-      return String.format("%1d%1d:%1d%1d", arrsave[0], arrsave[1], arrsave[2], arrsave[3]);
-
-    }
-
-    int [] arrsave = new int[4];
-    int nmin = -1;
-
-    void perm(int[] arr, int i, int j){
-      if (i == j) {
-        int val = evalMin(arr);
-        if (val > nmin){
-          copyInts(arr, arrsave);
-          nmin = val;
-        }
-        return;
-      }
-
-      for (int x = i; x <= j; x ++){
-        swap(arr, i, j);
-        perm(arr, i+1, j);
-
-        swap(arr, i, j);
-      }
-    }
-
-
-    private void copyInts(int[] arrFrom, int[] arrTo){
-      for (int i = 0; i< arrFrom.length; i++){
-        arrTo[i] = arrFrom[i];
-      }
-    }
 
     private int evalMin(int[] arr){
       int n = -1;
       int hr = arr[0] * 10 + arr[1];
-      if (hr <= 24) {
+      if (hr <= 23) {
         int min = arr[2] * 10 + arr[3];
         if (min <= 59){
-          if (!( hr == 24 && min == 0)){
             n = hr * 60 + min;
           }
         }
-
-      }
       return n;
     }
 
@@ -139,7 +117,4 @@ arr.length == 4
       arr[i] = arr[j];
       arr[j] = val;
     }
-
-
-
   }
